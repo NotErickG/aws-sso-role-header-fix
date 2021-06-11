@@ -5,19 +5,25 @@
 // @description  try to take over the world!
 // @author       Erick Gallegos
 // @match        https://console.aws.amazon.com/*
-// @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @grant        none
 // ==/UserScript==
 
 (function() {
     'use strict';
-    var value;
-    $('*:contains("AWSReservedSSO_")').each(function(){
-        if($(this).children().length < 1) {
-            value = $(this).text().split('_')[1];
-            $(this).text(value);
+    var elms = document.getElementsByTagName("*"),
+        len = elms.length;
+    for(var ii = 0; ii < len; ii++) {
+        var myChildred = elms[ii].childNodes;
+        var len2 = myChildred.length;
+        for (var jj = 0; jj < len2; jj++) {
+            if(myChildred[jj].nodeType === 3) {
+                if (myChildred[jj].nodeValue.includes("AWSReservedSSO_")){
+                    myChildred[jj].nodeValue = myChildred[jj].nodeValue.split('_')[1];
+                }
+            }
         }
-    })
+    }
+
 
 
 })();
