@@ -5,7 +5,6 @@
 // @description  try to take over the world!
 // @author       Erick Gallegos, Chris Ward
 // @match        https://console.aws.amazon.com/*
-// @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @grant        none
 // ==/UserScript==
 
