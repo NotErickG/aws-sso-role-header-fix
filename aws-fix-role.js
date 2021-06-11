@@ -15,6 +15,7 @@
     const accountNameMap = new Map();
     // TODO - Add each account, and its alias that you would want to have displayed next to the role name
     accountNameMap.set('123456789123', 'my-account');
+    
     $('*:contains("AWSReservedSSO_")').each(function(){
         // Find AWS Account ID
         const accountId = document.querySelectorAll("[data-testid='aws-my-account-details']")[0].innerText;
